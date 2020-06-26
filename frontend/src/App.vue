@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <h1>Ola Mundo</h1>
+    <Header />
+    <ul>
+      <li>ola</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import "./styles/global.css";
 
+import Header from "@/components/Header";
+
 export default {
   name: "App",
-  components: {}
+  components: {
+    Header
+  }
 };
 </script>
 
