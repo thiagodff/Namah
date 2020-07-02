@@ -30,5 +30,6 @@ export default {
   font-family: "Alice", serif;
   font-size: 46px;
   margin: 0 10px;
+  white-space: nowrap;
 }
 </style>

@@ -42,5 +42,6 @@ export default {
   font-size: 18px;
   font-weight: bold;
   margin-right: 10px;
+  white-space: nowrap;
 }
 </style>

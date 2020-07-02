@@ -28,6 +28,7 @@ export default {
   height: 100vh;
   padding: 0 30px;
   padding-top: 100px;
+  z-index: -1;
 }
 
 .button-wrapper div {
