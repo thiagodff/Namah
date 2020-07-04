@@ -356,8 +356,9 @@ div.cart span {
     height: 18px;
   }
 
-  .logo img {
+  a.logo img {
     height: 40px;
+    padding-right: 60px;
   }
 
   .menu .hamburguer {
