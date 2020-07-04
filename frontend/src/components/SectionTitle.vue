@@ -32,4 +32,10 @@ export default {
   margin: 0 10px;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 790px) {
+  .section h2 {
+    font-size: 34px;
+  }
+}
 </style>

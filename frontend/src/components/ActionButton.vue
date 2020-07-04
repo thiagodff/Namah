@@ -44,4 +44,15 @@ export default {
   margin-right: 10px;
   white-space: nowrap;
 }
+
+@media screen and (max-width: 790px) {
+  .button {
+    width: 100%;
+    margin-top: 36px;
+  }
+
+  .button p {
+    font-size: 14px;
+  }
+}
 </style>
