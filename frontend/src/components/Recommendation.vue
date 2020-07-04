@@ -1,17 +1,19 @@
 <template>
   <div class="recommendation-wrapper">
-    <div class="recommendation-text">
-      <p>nossos especialisas</p>
-      <strong>recomendam</strong>
+    <div class="recommendation">
+      <div class="recommendation-text">
+        <p>nossos especialisas</p>
+        <strong>recomendam</strong>
+      </div>
+
+      <RecommendProduct :product="book" />
+      <RecommendProduct :product="shirt" />
+      <RecommendProduct :product="carpet" />
+
+      <RecommendProduct :product="book" />
+      <RecommendProduct :product="shirt" />
+      <RecommendProduct :product="carpet" />
     </div>
-
-    <RecommendProduct :product="book" />
-    <RecommendProduct :product="shirt" />
-    <RecommendProduct :product="carpet" />
-
-    <RecommendProduct :product="book" />
-    <RecommendProduct :product="shirt" />
-    <RecommendProduct :product="carpet" />
   </div>
 </template>
 
@@ -55,18 +57,16 @@ export default {
 .recommendation-wrapper {
   max-width: 1200px;
   margin: 24px auto;
+}
+
+.recommendation {
+  max-width: 1200px;
   padding: 10px 0;
   border-top: 1px solid #c4c4c4;
   border-bottom: 1px solid #c4c4c4;
 
   display: flex;
   align-items: center;
-}
-
-@media screen and (max-width: 1400px) {
-  .recommendation-wrapper {
-    margin: 24px 140px;
-  }
 }
 
 .recommendation-text {
@@ -81,5 +81,28 @@ export default {
 
 .recommendation-text strong {
   font-size: 24px;
+}
+
+@media screen and (max-width: 1400px) {
+  .recommendation-wrapper {
+    margin: 24px 140px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .recommendation-wrapper {
+    margin: 24px 60px;
+    overflow: auto;
+  }
+
+  .recommendation {
+    width: 1200px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .recommendation-wrapper {
+    margin: 24px 15px;
+  }
 }
 </style>
