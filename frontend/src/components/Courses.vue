@@ -64,14 +64,41 @@ export default {
   flex-direction: column;
 }
 
+.courses {
+  display: flex;
+  margin: 36px -12px 0 -12px;
+}
+
 @media screen and (max-width: 1400px) {
   .courses-wrapper {
     margin: 120px 140px 0 140px;
   }
 }
 
-.courses {
-  display: flex;
-  margin: 60px -12px 0 -12px;
+@media screen and (max-width: 1230px) {
+  .courses-wrapper {
+    margin: 120px 60px 0 60px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .courses-wrapper {
+    margin: 120px 60px 0 60px;
+  }
+
+  .courses {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .courses-wrapper {
+    margin: 60px 15px 0 15px;
+  }
+
+  .courses {
+    margin-top: 12px;
+  }
 }
 </style>
