@@ -1,11 +1,10 @@
 <template>
   <div class="image-wrapper">
     <div class="image">
-      <div class="image-content">
-        <h3>Lorem ipsum dolor sit amet</h3>
-        <p>Lorem ipsum dolor sit amet</p>
-        <button @click.prevent>LOREM IPSUM</button>
-      </div>
+      <img src="../assets/banner.png" alt />
+      <h3>Lorem ipsum dolor sit amet</h3>
+      <p>Lorem ipsum dolor sit amet</p>
+      <button @click.prevent>LOREM IPSUM</button>
     </div>
   </div>
 </template>
@@ -17,49 +16,71 @@ export default {
 </script>
 
 <style scoped>
-.image {
+.image-wrapper {
   max-width: 1200px;
-  height: 250px;
-  background: url("../assets/banner.png");
-  border: 1px solid #c4c4c4;
+  min-height: 100px;
   margin: 60px auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 0 140px;
+}
+
+.image-wrapper img {
+  height: 100%;
+  min-height: 100px;
+  border: 1px solid #666666;
 }
 
 @media screen and (max-width: 1400px) {
-  .image {
+  .image-wrapper {
     margin: 60px 140px;
   }
 }
 
-.image-content {
-  background-color: transparent;
+@media screen and (max-width: 1230px) {
+  .image-wrapper {
+    margin: 60px 60px;
+  }
+}
+
+.image {
+  position: relative;
+  color: #fff;
+}
+
+.image img {
+  width: 100%;
+}
+
+.image h3 {
+  position: absolute;
   text-align: center;
-  width: 320px;
-}
-
-.image-content h3 {
+  width: 380px;
   font-size: 34px;
-  font-family: "DM Serif Display", serif;
+  font-family: "Alice", serif;
   color: #000000;
+  top: 15%;
+  right: 10%;
 }
 
-.image-content p {
+.image p {
+  position: absolute;
+  text-align: center;
+  width: 380px;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   color: #666666;
-  margin-top: 20px;
+  top: 52%;
+  right: 10%;
 }
 
-.image-content button {
+.image button {
+  position: absolute;
+  text-align: center;
+  bottom: 15%;
+  right: 10%;
+  width: 380px;
   background-color: #73a8a0;
   font-family: "Roboto", sans-serif;
   color: #fff;
   padding: 10px 44px;
-  margin-top: 20px;
   font-size: 14px;
   font-weight: 500;
   border: none;
@@ -67,5 +88,53 @@ export default {
 
 button:hover {
   background: #6bc0b5;
+}
+
+@media screen and (max-width: 1080px) {
+  .image h3 {
+    width: 320px;
+    font-size: 26px;
+    top: 15%;
+    right: 10%;
+  }
+
+  .image p {
+    width: 320px;
+    font-size: 14px;
+    top: 52%;
+    right: 10%;
+  }
+
+  .image button {
+    bottom: 15%;
+    right: 10%;
+    width: 320px;
+    padding: 8px 40px;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .image-wrapper {
+    margin: 0 15px 25px 15px;
+  }
+
+  .image h3 {
+    width: 180px;
+    font-size: 16px;
+    top: 20%;
+    right: 10%;
+  }
+
+  .image p {
+    width: 180px;
+    font-size: 11px;
+    right: 10%;
+    top: 60%;
+  }
+
+  .image button {
+    display: none;
+  }
 }
 </style>
