@@ -78,4 +78,10 @@ export default {
 a:hover {
   background: #6bc0b5;
 }
+
+@media screen and (max-width: 1230px) {
+  .button-wrapper {
+    display: none;
+  }
+}
 </style>
