@@ -8,18 +8,20 @@
     </div>
 
     <div class="section-news">
-      <div class="first-post">
-        <img :src="RunningImg" alt />
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <a href="#">VIAGEM</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
-      </div>
+      <div class="news">
+        <div class="first-post">
+          <img :src="RunningImg" alt />
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          <a href="#">VIAGEM</a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
+        </div>
 
-      <div class="second-post">
-        <img :src="DumbbellNoticeImg" alt />
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <a href="#">VIAGEM</a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
+        <div class="second-post">
+          <img :src="DumbbellNoticeImg" alt />
+          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+          <a href="#">VIAGEM</a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna...</p>
+        </div>
       </div>
 
       <div class="newsletter">
@@ -29,9 +31,11 @@
         </h4>
         <p>Assine nossa newsletter</p>
 
-        <input placeholder="Seu e-mail" type="text" />
+        <form>
+          <input placeholder="Seu e-mail" type="text" />
 
-        <button @click.prevent>ASSINAR</button>
+          <button @click.prevent>ASSINAR</button>
+        </form>
 
         <span>
           Ao clicar em “assinar”, você concorda em receber
@@ -68,6 +72,7 @@ export default {
   },
   data() {
     return {
+      windowWidth: "",
       DumbbellNoticeImg,
       RunningImg,
       firstElement: {
@@ -89,6 +94,26 @@ export default {
         p: "14px"
       }
     };
+  },
+  watch: {
+    windowWidth(newWidth) {
+      if (newWidth <= 790) {
+        this.firstElement.h3 = "20px";
+        this.firstElement.p = "11px";
+        this.secondElement.h3 = "20px";
+        this.secondElement.p = "11px";
+      } else {
+        this.firstElement.h3 = "32px";
+        this.firstElement.p = "14px";
+        this.secondElement.h3 = "32px";
+        this.secondElement.p = "14px";
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.windowWidth = window.innerWidth;
+    });
   }
 };
 </script>
@@ -114,6 +139,10 @@ export default {
   margin-right: 12px;
 }
 
+.blog-banner-wrapper .meditation h3 {
+  font-size: 3px;
+}
+
 .exercice {
   margin-left: 12px;
 }
@@ -127,6 +156,10 @@ img {
   flex-direction: row;
   margin-top: 60px;
   flex: 1;
+}
+
+.news {
+  display: flex;
 }
 
 .first-post {
@@ -241,6 +274,124 @@ img {
 
   .newsletter {
     padding: 40px 25px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .blog-wrapper {
+    margin: 120px 60px 0 60px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .banner {
+    flex-wrap: wrap;
+    max-height: 1300px;
+    max-width: 1200px;
+  }
+
+  .meditation,
+  .exercice {
+    width: 100%;
+    margin: 0;
+  }
+
+  .exercice {
+    margin-top: 24px;
+  }
+
+  .section-news {
+    margin-top: 24px;
+    flex-direction: column;
+  }
+
+  .second-post {
+    margin-right: 0;
+  }
+
+  .newsletter {
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  .newsletter form {
+    display: flex;
+  }
+
+  .newsletter h4 br {
+    display: none;
+  }
+
+  .newsletter form input {
+    margin-top: 30px;
+  }
+
+  .newsletter form button {
+    padding: 8px 16px;
+    margin-left: 12px;
+  }
+
+  .newsletter span {
+    margin-top: 24px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .blog-wrapper {
+    margin: 60px 15px 0 15px;
+  }
+
+  .banner {
+    margin-top: 30px;
+  }
+
+  .first-post h3,
+  .second-post h3 {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+
+  .first-post a,
+  .second-post a {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+
+  .first-post p,
+  .second-post p {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .newsletter {
+    padding: 24px 12px;
+  }
+
+  .newsletter h4 {
+    font-size: 28px;
+  }
+
+  .newsletter p {
+    margin-top: 12px;
+    font-size: 18px;
+  }
+
+  .newsletter form input {
+    margin-top: 24px;
+    height: 46px;
+    font-size: 14px;
+  }
+
+  .newsletter form button {
+    margin-top: 24px;
+    padding: 12px 14px;
+    font-size: 14px;
+    margin-left: 12px;
+  }
+
+  .newsletter span {
+    margin-top: 24px;
   }
 }
 </style>
