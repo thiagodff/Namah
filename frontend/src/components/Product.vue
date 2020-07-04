@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 .product {
+  flex: 1 0 100px;
   cursor: pointer;
   margin: 0 12px;
   display: flex;
@@ -44,7 +45,7 @@ export default {
 }
 
 .coracao {
-  z-index: 10;
+  z-index: 5;
   margin: 0 10px -45px 0;
   height: 35px;
   width: 35px;
@@ -82,5 +83,24 @@ export default {
   margin-top: 23px;
   font-size: 18px;
   color: #333333;
+}
+
+@media screen and (max-width: 750px) {
+  .product {
+    margin: 24px 7px 0 7px;
+    flex: 1 0 220px;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .product {
+    flex: 1 0 150px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .product {
+    flex: 1 0 130px;
+  }
 }
 </style>

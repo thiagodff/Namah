@@ -88,16 +88,11 @@ export default {
   flex-direction: column;
 }
 
-@media screen and (max-width: 1400px) {
-  .shop-wrapper {
-    margin: 120px 140px 0 140px;
-  }
-}
-
 .products {
   display: flex;
   flex-direction: row;
   margin: 70px -58px 40px -58px;
+  flex-wrap: wrap;
 }
 
 .arrow-left {
@@ -127,5 +122,53 @@ export default {
 
 .carousel-wrapper span.active {
   background: #73a8a0;
+}
+
+@media screen and (max-width: 1400px) {
+  .shop-wrapper {
+    margin: 120px 140px 0 140px;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .shop-wrapper {
+    margin: 120px 60px 0 60px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .arrow-left {
+    margin-left: 10px;
+    margin-right: 18px;
+  }
+
+  .arrow-right {
+    margin-right: 10px;
+    margin-left: 18px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .shop-wrapper {
+    margin: 60px 15px 0 15px;
+  }
+
+  .products {
+    margin: 36px -12px 40px -12px;
+  }
+
+  .arrow-left {
+    display: none;
+  }
+
+  .arrow-right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .products {
+    margin: 36px -7px 24px -7px;
+  }
 }
 </style>
