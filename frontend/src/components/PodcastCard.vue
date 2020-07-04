@@ -34,6 +34,7 @@ export default {
   background: #ffffff;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  margin-top: 24px;
 }
 
 .card img.imagem {
@@ -67,5 +68,22 @@ export default {
   font-size: 14px;
   margin-right: 15px;
   color: #333333;
+}
+
+@media screen and (max-width: 790px) {
+  .card span {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  .card h4 {
+    font-size: 15px;
+    margin-right: 12px;
+    margin-left: 12px;
+  }
+
+  .description {
+    margin: 20px 12px;
+  }
 }
 </style>
