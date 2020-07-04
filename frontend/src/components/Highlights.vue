@@ -57,7 +57,7 @@ export default {
   display: flex;
   flex-direction: row;
   max-width: 1200px;
-  max-height: 528px;
+  max-height: 5280px;
   margin: 0 auto;
 }
 
@@ -169,6 +169,101 @@ p {
 
   .col-2 {
     width: 33.25%;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .highlights-wrapper {
+    margin: 0 60px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .highlights-wrapper {
+    margin: 0 60px;
+    flex-wrap: wrap;
+    max-height: 1600px;
+  }
+
+  .first-element {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .col-2 {
+    margin-top: 24px;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+  }
+
+  .second-element {
+    height: 100%;
+    width: 100%;
+    margin-right: 24px;
+    margin-bottom: 0;
+  }
+
+  .second-element {
+    height: 100%;
+    width: 100%;
+  }
+
+  .third-element {
+    height: 100%;
+    width: 100%;
+  }
+
+  .yoga,
+  .product {
+    height: 100%;
+    width: 100%;
+  }
+
+  .yoga {
+    margin-right: 24px;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .highlights-wrapper {
+    margin: 0 15px;
+  }
+
+  .col-2 {
+    flex-direction: column;
+  }
+
+  .second-element h3 {
+    font-size: 20px;
+  }
+
+  .second-element h3 {
+    top: 70%;
+  }
+
+  .second-element p {
+    top: 63%;
+  }
+
+  .third-element {
+    margin-top: 24px;
+  }
+
+  .yoga p {
+    top: 58%;
+  }
+
+  .yoga h3 {
+    top: 66%;
+  }
+
+  .product h3 {
+    top: 55%;
+  }
+
+  .product p {
+    top: 80%;
   }
 }
 </style>

@@ -53,8 +53,20 @@ export default {
 }
 
 .blog-banner-wrapper p a {
-  margin-right: 50px;
+  margin-right: 20px;
   text-decoration: underline;
   color: #fff;
+}
+
+@media screen and (max-width: 790px) {
+  .blog-banner-wrapper h3 {
+    top: 61%;
+    font-size: 20px;
+  }
+
+  .blog-banner-wrapper p {
+    font-size: 12px;
+    top: 85%;
+  }
 }
 </style>
