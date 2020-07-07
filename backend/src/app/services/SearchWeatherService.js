@@ -1,6 +1,10 @@
 const axios = require("axios");
 
-const API_KEY = "7db65a0cee1bc8768be7ce089ffced09";
+const openWeatherMap = require("../../config/openWeatherMap");
+
+const API_KEY = openWeatherMap.API_KEY
+  ? openWeatherMap.API_KEY
+  : "fd192102f4273560130f08c5cf75a68a";
 
 module.exports = {
   async SearchByCity(city) {

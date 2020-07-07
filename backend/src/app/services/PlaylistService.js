@@ -1,12 +1,7 @@
 const axios = require("axios");
+const spotify = require("../../config/spotify");
 
-const Authorization =
-  "Bearer BQC3o9VepkG89F32ZYz2zz765leIbGmGr_NbUagYNORG93gywwmBIkAQWjAA5HZZ2dpLp1IV3_ZHMNLFjVkiJbQcXoGckct7l88MF0cH990VUS4jGWqFETBYeISN4sBzQ3galgg56PjzxXcCv_7ZbeAyL4tpwr6MhoXS2";
-
-const IDRock = "37i9dQZF1DWXRqgorJj26U";
-const IDParty = "37i9dQZF1DWXRqgorJj26U";
-const IDPop = "37i9dQZF1DWXRqgorJj26U";
-const IDClassic = "37i9dQZF1DWXRqgorJj26U";
+const Authorization = `Bearer ${spotify.token}`;
 
 module.exports = {
   async FindBestPlaylist(temperature) {
@@ -19,28 +14,28 @@ module.exports = {
     let playlistID = "";
 
     if (temperature > 30) {
-      playlistID = IDParty;
+      playlistID = spotify.playlist.IDParty;
     } else if (temperature >= 15) {
-      playlistID = IDPop;
+      playlistID = spotify.playlist.IDPop;
     } else if (temperature >= 10) {
-      playlistID = IDRock;
+      playlistID = spotify.playlist.IDRock;
     } else {
-      playlistID = IDClassic;
+      playlistID = spotify.playlist.IDClassic;
     }
 
     try {
       const response = await axios.get(
-        `https://api.spotify.com/v1/playlists/${playlistID}?market=BR&limit=10`,
+        `https://api.spotify.com/v1/playlists/${playlistID}?market=BR`,
         { headers }
       );
+
+      const playlist = response.data.tracks.items.map(
+        (item) => `${item.track.name}`
+      );
+
+      return playlist;
     } catch (error) {
       return error;
     }
-
-    const playlist = response.data.tracks.items.map(
-      (item) => `${item.track.name}`
-    );
-
-    return playlist;
   },
 };
