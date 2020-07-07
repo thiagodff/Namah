@@ -1,4 +1,4 @@
-# frontend
+# Namah frontend
 
 ## Project setup
 ```
