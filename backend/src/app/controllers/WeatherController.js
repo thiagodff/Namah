@@ -1,6 +1,5 @@
 const SearchWeatherService = require("../services/SearchWeatherService");
 const PlaylistService = require("../services/PlaylistService");
-const axios = require("axios");
 
 module.exports = {
   async create(req, res) {
