@@ -161,6 +161,10 @@ ul li {
   color: #666666;
 }
 
+a {
+  color: #666666;
+}
+
 a:visited {
   color: #666666;
 }
