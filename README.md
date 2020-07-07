@@ -1,3 +1,6 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be26bc29-9531-4106-b9ad-1dd2f41fd456/deploy-status)](https://app.netlify.com/sites/namah/deploys)
+
+
 # Namah frontend
 
 ## Project setup
