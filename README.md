@@ -34,7 +34,7 @@ This app features all the latest tools and practices in mobile development!
 
 ### Getting started with the [frontend](https://github.com/thiagodff/Namah/tree/master/frontend)
 
-You can access the site here: [namah.netlify.app](namah.netlify.app/)
+You can access the site here: <a href="namah.netlify.app" target="__blank">namah.netlify.app</a>
 
 1. Move yourself to the frontend folder: `cd frontend`<br />
 2. Run `yarn` to install dependencies<br />
